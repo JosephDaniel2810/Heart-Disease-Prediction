@@ -8,3 +8,4 @@ seaborn
 matplotlib
 joblib
 waitress
+streamlit

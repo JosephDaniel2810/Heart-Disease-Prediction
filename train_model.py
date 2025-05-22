@@ -28,9 +28,9 @@ from sklearn.metrics import (
     roc_auc_score, confusion_matrix, roc_curve
 )
 
-# -----------------------------
+
 # Configuration and Constants
-# -----------------------------
+
 DATA_PATH = "data/heart_cleveland_upload.csv"
 VIS_DIR = "visualization"
 MODEL_DIR = "models"
@@ -50,9 +50,9 @@ CV_FOLDS = 5
 os.makedirs(VIS_DIR, exist_ok=True)
 os.makedirs(MODEL_DIR, exist_ok=True)
 
-# -----------------------------
+
 # 1. Data Loading and Cleaning
-# -----------------------------
+
 def load_and_clean_data(filepath: str) -> pd.DataFrame:
     """
     Load dataset from CSV and perform cleaning:
@@ -103,9 +103,9 @@ def load_and_clean_data(filepath: str) -> pd.DataFrame:
     print("Missing values after cleaning:\n", df.isnull().sum())
     return df
 
-# -----------------------------
+
 # 2. Exploratory Data Analysis
-# -----------------------------
+
 def plot_distribution(df: pd.DataFrame):
     """
     Plot histograms for all features by target status.
@@ -139,9 +139,9 @@ def plot_correlation(df: pd.DataFrame):
     plt.close()
     print(f"Saved correlation matrix to {path}")
 
-# -----------------------------
+
 # 3. Feature Engineering & Preprocessing
-# -----------------------------
+
 def prepare_features(df: pd.DataFrame):
     """
     Split features and target, apply scaling and power transform.
@@ -168,9 +168,9 @@ def prepare_features(df: pd.DataFrame):
 
     return X_train_scaled, X_test_scaled, y_train, y_test, scaler
 
-# -----------------------------
+
 # 4. Model Training & Tuning
-# -----------------------------
+
 def train_and_tune(X_train, y_train):
     """
     Tune multiple models via GridSearchCV.
@@ -200,9 +200,9 @@ def train_and_tune(X_train, y_train):
 
     return tuned_models
 
-# -----------------------------
+
 # 5. Evaluation & Visualization
-# -----------------------------
+
 def evaluate_and_visualize(tuned_models, X_test, y_test, df):
 
     """
@@ -268,17 +268,17 @@ def evaluate_and_visualize(tuned_models, X_test, y_test, df):
     print(f"\nBest model: {best_name} with F1 score {best_f1:.4f}")
     return best_name, tuned_models[best_name]
 
-# -----------------------------
+
 # 6. Save Artifacts
-# -----------------------------
+
 def save_artifacts(best_name,best_grid,scaler):
     model=best_grid.best_estimator_
     joblib.dump(model, f"{MODEL_DIR}/{best_name.replace(' ', '_')}.pkl")
     joblib.dump(scaler, f"{MODEL_DIR}/scaler.pkl")
 
-# -----------------------------
+
 # Main Execution
-# -----------------------------
+
 def main():
     # Step 1: Load & clean
     df = load_and_clean_data(DATA_PATH)
