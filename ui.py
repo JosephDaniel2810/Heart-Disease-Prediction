@@ -3,22 +3,22 @@ import requests
 import os
 from PIL import Image
 
-# ------------------------
+
 # Configuration
-# ------------------------
-API_URL = "http://127.0.0.1:8800/predict"
+
+API_URL = "https://checkyourheart.streamlit.app"
 IMG_DIR = "img"
 st.set_page_config(page_title="Heart Disease Predictor", layout="wide")
 
-# ------------------------
+
 # Title and Instructions
-# ------------------------
+
 st.title("💓 Heart Disease Prediction")
 st.markdown("Use the sliders below to enter patient data and get a risk prediction.")
 
-# ------------------------
+
 # Input Form
-# ------------------------
+
 with st.form("prediction_form"):
     sex_option = st.selectbox("Sex", ["Male", "Female"])
     age = st.slider("Age", 18, 100, 50)
@@ -28,9 +28,9 @@ with st.form("prediction_form"):
     oldpeak = st.slider("ST Depression (Oldpeak)", 0.0, 6.0, 1.0, step=0.1)
     submitted = st.form_submit_button("🔍 Predict")
 
-# ------------------------
+
 # Prediction Logic
-# ------------------------
+
 if submitted:
     payload = {
         "age": age,
@@ -65,7 +65,7 @@ if submitted:
                 st.divider()
                 st.subheader("📊 Model Visualizations")
 
-                # Define chart filenames expected from the backend
+                # chart filenames expected from the backend
                 image_map = {
                     "Radar": "prediction_radar.png",
                     "Scatter": "prediction_scatter.png",
