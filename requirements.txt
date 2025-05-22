@@ -1,0 +1,10 @@
+flask
+flasgger
+flask-cors
+pandas
+numpy
+scikit-learn
+seaborn
+matplotlib
+joblib
+waitress
