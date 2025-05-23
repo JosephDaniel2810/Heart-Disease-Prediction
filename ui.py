@@ -6,7 +6,7 @@ from PIL import Image
 
 # Configuration
 
-API_URL = "https://checkyourheart.streamlit.app"
+API_URL = "http://127.0.0.1:8800/predict"
 IMG_DIR = "img"
 st.set_page_config(page_title="Heart Disease Predictor", layout="wide")
 
