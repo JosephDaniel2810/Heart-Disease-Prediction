@@ -34,7 +34,7 @@ This project is an end-to-end machine learning solution that predicts the probab
 
 ### 🔍 Input Panel + Risk Prediction Output
 
-![Prediction UI](./Screenshot%202025-05-22%20at%205.15.53%E2%80%AFPM.png)
+![Prediction UI](ui_prediction.png)
 
 - Users can select values using interactive sliders.
 - Probability and risk level are displayed after hitting "Predict".
@@ -43,7 +43,7 @@ This project is an end-to-end machine learning solution that predicts the probab
 
 ### 📊 Real-time Model Visualizations
 
-![Visualizations](./Screenshot%202025-05-22%20at%205.16.07%E2%80%AFPM.png)
+![Visualizations](ui_visualizations.png)
 
 Includes:
 - Radar Chart
