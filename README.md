@@ -43,7 +43,7 @@ This project is an end-to-end machine learning solution that predicts the probab
 
 ### 📊 Real-time Model Visualizations
 
-![Visualizations](ui_visualizations.png)
+![Visualizations](ui_visualisations.png)
 
 Includes:
 - Radar Chart
